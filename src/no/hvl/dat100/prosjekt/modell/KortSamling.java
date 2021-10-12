@@ -59,7 +59,10 @@ public class KortSamling {
 	 */
 	public boolean erTom() {
 		boolean tom = false;
-		if (samling.length == 0) {]
+		if (samling.length == 0) {
+			tom = true;
+		}
+		return tom;
 	}
 
 	/**
