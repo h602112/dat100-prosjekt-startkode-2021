@@ -45,12 +45,11 @@ public class KortSamling {
 	 * @return antall kort i samlinga.
 	 */
 	public int getAntalKort() {
-		
-		// TODO - START
-		
-		throw new UnsupportedOperationException(TODO.method());
-		
-		// TODO - END
+		int antall = 0;
+		for (int i = 0; i < samling.length; i++) {
+			antall++;
+		}
+		return antall;
 	}
 	
 	/**
@@ -59,12 +58,8 @@ public class KortSamling {
 	 * @return true om samlinga er tom, false ellers.
 	 */
 	public boolean erTom() {
-		
-		// TODO - START
-				
-		throw new UnsupportedOperationException(TODO.method());
-		
-		// TODO - END
+		boolean tom = false;
+		if (samling.length == 0) {]
 	}
 
 	/**
