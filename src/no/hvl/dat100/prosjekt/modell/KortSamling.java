@@ -61,6 +61,13 @@ public class KortSamling {
 	 * @return true om samlinga er tom, false ellers.
 	 */
 	public boolean erTom() {
+		boolean tom = true;
+		for (Kort kort: samling) {
+			if (kort != null) {
+				tom = false;
+			}
+		}
+		return tom;
 
 	}
 
