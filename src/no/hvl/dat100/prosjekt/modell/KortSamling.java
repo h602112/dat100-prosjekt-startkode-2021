@@ -108,8 +108,18 @@ public class KortSamling {
 	 *         null.
 	 */
 	public Kort seSiste() {
-		throw new UnsupportedOperationException(TODO.method());
-
+		boolean tom = true;
+		for (int i = 0; i <= antall; i++) {
+			if (samling[i] != null) {
+				tom = false;
+				break;
+			}
+		}
+		if (tom) {
+			return null;
+		} else {
+			return samling[antall];
+		}
 	}
 
 	/**
