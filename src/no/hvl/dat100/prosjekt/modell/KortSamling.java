@@ -25,6 +25,7 @@ public class KortSamling {
 		antall = 0;
 	}
 
+
 	/**
 	 * Returnerer en tabell med kortene i samlinga. Tabellen trenger ikke være
 	 * full. Kortene ligger sammenhengende fra starten av tabellen. Kan få
@@ -35,9 +36,7 @@ public class KortSamling {
 	 * @return tabell av kort.
 	 */
 	public Kort[] getSamling() {
-		
 		return samling;
-		
 	}
 	
 	/**
@@ -46,12 +45,6 @@ public class KortSamling {
 	 * @return antall kort i samlinga.
 	 */
 	public int getAntalKort() {
-		int antall = samling.length;
-		for (int i = 0; i < samling.length; i++) {
-			if (samling[i] == null) {
-				antall--;
-			}
-		}
 		return antall;
 	}
 	
@@ -93,7 +86,7 @@ public class KortSamling {
 		// Husk: bruk Regler.MAKS_KORT_FARGE for å få antall kort per farge
 		for (Kortfarge f : Kortfarge.values()) {
 			for (int i = 1; i <= Regler.MAKS_KORT_FARGE; i++) {
-				samling[i - 1] = new Kort(f, i);
+				samling[i] = new Kort(f, i);
 				antall++;
 			}
 		}
@@ -172,16 +165,15 @@ public class KortSamling {
 		
 		// TODO - START
 		boolean fjernet = false;
-		for (int i = 0; i < samling.length; i++) {
-			if (samling[i] == kort) {
+		for (int i = 0; i < antall; i++) {
+			if (samling[i].compareTo(kort) == 0) {
 				samling[i] = null;
 				fjernet = true;
 				antall--;
 			}
-			return fjernet;
 		}
-		
-		throw new UnsupportedOperationException(TODO.method());
+		return fjernet;
+		//throw new UnsupportedOperationException(TODO.method());
 
 		// TODO - END
 	}
@@ -195,6 +187,8 @@ public class KortSamling {
 	public Kort[] getAllekort() {
 		
 		// TODO - START
+		Kort[] tabell = new Kort[samling.length];
+
 		
 		throw new UnsupportedOperationException(TODO.method());
 
