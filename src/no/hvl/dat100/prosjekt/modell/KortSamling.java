@@ -135,18 +135,15 @@ public class KortSamling {
 	 * @return true om kortet finst i samlinga, false ellers.
 	 */
 	public boolean har(Kort kort) {
-		
-		// TODO - START
-		boolean har = false;
-		for (int i = 0; i < samling.length; i++) {
-			if (samling[i] == kort) {
-				har = true;
+		int i = 0;
+		while (i < antall && kort != null) {
+			if (kort.equals(samling[i])) {
+				return true;
 			}
+			i++;
 		}
-		return har;
-		
 
-		// return false;
+		return false;
 		// TODO - END
 		
 	}
