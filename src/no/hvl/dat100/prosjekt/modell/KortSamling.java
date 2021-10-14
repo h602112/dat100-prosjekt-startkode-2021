@@ -118,8 +118,9 @@ public class KortSamling {
 		if (tom) {
 			return null;
 		} else {
-			return samling[antall];
+			return samling[samling.length - 1];
 		}
+		
 	}
 
 	/**
@@ -173,12 +174,13 @@ public class KortSamling {
 		// TODO - START
 		boolean fjernet = false;
 		for (int i = 0; i < antall; i++) {
-			if (samling[i].compareTo(kort) == 0) {
+			if (samling[i].equals(kort) == true) {
 				samling[i] = null;
 				fjernet = true;
 				antall--;
 			}
 		}
+		
 		return fjernet;
 		//throw new UnsupportedOperationException(TODO.method());
 
