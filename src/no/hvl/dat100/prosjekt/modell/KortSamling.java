@@ -21,7 +21,8 @@ public class KortSamling {
 	 * Oppretter en tom Kortsamling med plass til MAKS_KORT (hele kortstokken).
 	 */
 	public KortSamling() {
-		Kort[] samling = new Kort[MAKS_KORT];
+		samling = new Kort[MAKS_KORT];
+		antall = 0;
 	}
 
 	/**
@@ -45,9 +46,11 @@ public class KortSamling {
 	 * @return antall kort i samlinga.
 	 */
 	public int getAntalKort() {
-		int antall = 0;
+		int antall = samling.length;
 		for (int i = 0; i < samling.length; i++) {
-			antall++;
+			if (samling[i] == null) {
+				antall--;
+			}
 		}
 		return antall;
 	}
@@ -58,11 +61,7 @@ public class KortSamling {
 	 * @return true om samlinga er tom, false ellers.
 	 */
 	public boolean erTom() {
-		boolean tom = false;
-		if (samling.length == 0) {
-			tom = true;
-		}
-		return tom;
+
 	}
 
 	/**
@@ -72,11 +71,8 @@ public class KortSamling {
 	 *            er kortet som skal leggast til.
 	 */
 	public void leggTil(Kort kort) {
-		
-		// TODO - START
-		
-		throw new UnsupportedOperationException(TODO.method());
-		// TODO - END
+		samling[antall] = kort;
+		antall++;
 		
 	}
 	
@@ -97,11 +93,9 @@ public class KortSamling {
 	 * Fjerner alle korta fra samlinga slik at den blir tom.
 	 */
 	public void fjernAlle() {
-		
-		// TODO - START
-		
-		throw new UnsupportedOperationException(TODO.method());
-		// TODO - END
+		for (Kort kort: samling) {
+			kort = null;
+		}
 	}
 	
 	/**
@@ -111,12 +105,11 @@ public class KortSamling {
 	 *         null.
 	 */
 	public Kort seSiste() {
-		
-		// TODO - START
-		
-		throw new UnsupportedOperationException(TODO.method());
-
-		// TODO - END
+		if (samling.length == 0) {
+			return null;
+		} else {
+			return samling[samling.length-1];
+		}
 		
 	}
 
