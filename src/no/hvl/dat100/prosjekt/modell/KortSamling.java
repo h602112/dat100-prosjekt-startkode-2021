@@ -87,8 +87,7 @@ public class KortSamling {
 		// Husk: bruk Regler.MAKS_KORT_FARGE for å få antall kort per farge
 		for (Kortfarge f : Kortfarge.values()) {
 			for (int i = 1; i <= Regler.MAKS_KORT_FARGE; i++) {
-				samling[i] = new Kort(f, i);
-				antall++;
+				leggTil(new Kort(f, i));
 			}
 		}
 
