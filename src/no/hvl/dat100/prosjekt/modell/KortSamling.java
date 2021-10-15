@@ -54,6 +54,7 @@ public class KortSamling {
 	 * @return true om samlinga er tom, false ellers.
 	 */
 	public boolean erTom() {
+		
 		boolean tom = true;
 		for (Kort kort: samling) {
 			if (kort != null) {
@@ -98,7 +99,15 @@ public class KortSamling {
 	 * Fjerner alle korta fra samlinga slik at den blir tom.
 	 */
 	public void fjernAlle() {
-
+		
+		// TODO - START
+		
+		for (int i = 0; i < antall; i++) {
+			samling[i] = null;
+			antall--;
+		}
+		
+		// TODO - END
 	}
 	
 	/**
@@ -118,7 +127,7 @@ public class KortSamling {
 		if (tom) {
 			return null;
 		} else {
-			return samling[samling.length - 1];
+			return samling[antall - 1];
 		}
 		
 	}
@@ -132,8 +141,13 @@ public class KortSamling {
 	public Kort taSiste() {
 		
 		// TODO - START
-		
-		throw new UnsupportedOperationException(TODO.method());
+		if (antall == 0) {
+			return null;
+		}
+		Kort siste = samling[antall-1];
+		samling[antall - 1] = null;
+		antall--;
+		return siste;
 		
 		// TODO - END
 	}
@@ -155,6 +169,7 @@ public class KortSamling {
 		}
 
 		return false;
+		
 		// TODO - END
 		
 	}
@@ -172,16 +187,17 @@ public class KortSamling {
 	public boolean fjern(Kort kort) {
 		
 		// TODO - START
-		boolean fjernet = false;
 		for (int i = 0; i < antall; i++) {
-			if (samling[i].equals(kort) == true) {
-				samling[i] = null;
-				fjernet = true;
+			if (samling[i].equals(kort)) {
+				
+				samling[i] = samling[antall - 1];
 				antall--;
+				return true;
 			}
 		}
 		
-		return fjernet;
+		return false;
+
 		//throw new UnsupportedOperationException(TODO.method());
 
 		// TODO - END
@@ -196,10 +212,14 @@ public class KortSamling {
 	public Kort[] getAllekort() {
 		
 		// TODO - START
-		Kort[] tabell = new Kort[samling.length];
-
+		Kort[] tabell = new Kort[antall];
 		
-		throw new UnsupportedOperationException(TODO.method());
+		for (int i = 0; i < antall; i++) {
+			tabell[i] = samling[i];
+		}
+		
+		return tabell;
+		
 
 		// TODO - END
 	
