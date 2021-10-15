@@ -101,14 +101,11 @@ public class KortSamling {
 	public void fjernAlle() {
 		
 		// TODO - START
-		
-		for (int i = 0; i < antall; i++) {
+		for (int i = antall - 1; i >= 0; i--) {
 			samling[i] = null;
 			antall--;
 		}
 		
-		// Un-comment kodesnippen under for en quickfix til metoden
-		// antall = 0;
 		
 		// TODO - END
 	}
@@ -192,7 +189,6 @@ public class KortSamling {
 		// TODO - START
 		for (int i = 0; i < antall; i++) {
 			if (samling[i].equals(kort)) {
-				
 				samling[i] = samling[antall - 1];
 				antall--;
 				return true;
@@ -200,9 +196,7 @@ public class KortSamling {
 		}
 		
 		return false;
-
-		//throw new UnsupportedOperationException(TODO.method());
-
+		
 		// TODO - END
 	}
 
