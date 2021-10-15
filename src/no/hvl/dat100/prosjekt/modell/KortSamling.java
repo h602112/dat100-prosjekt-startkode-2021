@@ -107,6 +107,9 @@ public class KortSamling {
 			antall--;
 		}
 		
+		// Un-comment kodesnippen under for en quickfix til metoden
+		// antall = 0;
+		
 		// TODO - END
 	}
 	
