@@ -23,8 +23,7 @@ public class Bord {
 	public Bord() {
 		
 		// TODO - START
-		bunkeFra = new KortSamling();
-		bunkeTil = new KortSamling();
+		
 		// TODO - END
 	}
 	

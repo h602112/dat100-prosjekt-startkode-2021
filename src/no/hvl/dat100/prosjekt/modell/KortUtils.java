@@ -24,11 +24,11 @@ public class KortUtils {
 		
 		for (int i = 0; i < antall; i++) {
 			for (int j = 1; j < antall - i; j++) {
-//				if (tempSamling[j - 1] > tempSamling[j]) {	TODO
-//					Kort temp = tempSamling[j - 1];
-//					tempSamling[j - 1] = tempSamling[j];
-//					tempSamling[j] = temp;
-//				}
+				if (tempSamling[j - 1].getVerdi() > tempSamling[j].getVerdi()) {
+					Kort temp = tempSamling[j - 1];
+					tempSamling[j - 1] = tempSamling[j];
+					tempSamling[j] = temp;
+				}
 			}
 		}
 		
