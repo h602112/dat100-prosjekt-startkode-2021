@@ -23,8 +23,8 @@ public class Bord {
 	public Bord() {
 		
 		// TODO - START
-		
-		throw new UnsupportedOperationException(TODO.constructor("Bord"));
+		bunkeFra = new KortSamling();
+		bunkeTil = new KortSamling();
 		// TODO - END
 	}
 	
@@ -58,7 +58,7 @@ public class Bord {
 	public boolean bunketilTom() {
 		
 		// TODO - START
-				
+		
 		throw new UnsupportedOperationException(TODO.method());
 
 		// TODO - END

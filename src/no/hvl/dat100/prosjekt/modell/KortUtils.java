@@ -19,9 +19,19 @@ public class KortUtils {
 	public static void sorter(KortSamling samling) {
 		
 		// TODO - START
-
+		int antall = samling.getAntalKort();
+		Kort[] tempSamling = samling.getSamling();
 		
-		throw new UnsupportedOperationException(TODO.method());
+		for (int i = 0; i < antall; i++) {
+			for (int j = 1; j < antall - i; j++) {
+//				if (tempSamling[j - 1] > tempSamling[j]) {	TODO
+//					Kort temp = tempSamling[j - 1];
+//					tempSamling[j - 1] = tempSamling[j];
+//					tempSamling[j] = temp;
+//				}
+			}
+		}
+		
 		// TODO - END
 	}
 	
@@ -32,10 +42,19 @@ public class KortUtils {
 	 * 			samling av kort som skal stokkes. 
 	 */
 	public static void stokk(KortSamling samling) {
-		
 		// TODO - START
+		int antall = samling.getAntalKort();
+		Kort[] tempSamling = samling.getSamling();
+		Random random = new Random();
+
 		
-		throw new UnsupportedOperationException(TODO.method());
+		for (int i = 0; i < antall; i++) {
+			int j = random.nextInt(antall);
+			Kort temp = tempSamling[i];
+			tempSamling[i] = tempSamling[j];
+			tempSamling[j] = temp;
+		}
+		
 		// TODO - END
 	}
 	

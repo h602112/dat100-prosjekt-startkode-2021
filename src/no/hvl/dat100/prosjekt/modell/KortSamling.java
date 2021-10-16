@@ -21,6 +21,7 @@ public class KortSamling {
 	 * Oppretter en tom Kortsamling med plass til MAKS_KORT (hele kortstokken).
 	 */
 	public KortSamling() {
+		
 		samling = new Kort[MAKS_KORT];
 		antall = 0;
 	}
@@ -36,6 +37,7 @@ public class KortSamling {
 	 * @return tabell av kort.
 	 */
 	public Kort[] getSamling() {
+		
 		return samling;
 	}
 	
@@ -45,6 +47,7 @@ public class KortSamling {
 	 * @return antall kort i samlinga.
 	 */
 	public int getAntalKort() {
+		
 		return antall;
 	}
 	
@@ -72,9 +75,9 @@ public class KortSamling {
 	 *            er kortet som skal leggast til.
 	 */
 	public void leggTil(Kort kort) {
+		
 		samling[antall] = kort;
 		antall++;
-		
 	}
 	
 	/**
@@ -105,7 +108,6 @@ public class KortSamling {
 			antall--;
 		}
 		
-		
 		// TODO - END
 	}
 	
@@ -116,6 +118,7 @@ public class KortSamling {
 	 *         null.
 	 */
 	public Kort seSiste() {
+		
 		boolean tom = true;
 		for (int i = 0; i <= antall; i++) {
 			if (samling[i] != null) {
@@ -159,14 +162,13 @@ public class KortSamling {
 	 * @return true om kortet finst i samlinga, false ellers.
 	 */
 	public boolean har(Kort kort) {
-		int i = 0;
-		while (i < antall && kort != null) {
-			if (kort.equals(samling[i])) {
+
+		for (int i = 0; i < antall; i++) {
+			if (samling[i].equals(kort)) {
 				return true;
 			}
-			i++;
 		}
-
+		
 		return false;
 		
 		// TODO - END
