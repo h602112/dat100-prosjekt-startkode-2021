@@ -2,7 +2,13 @@ package no.hvl.dat100.prosjekt.kontroll;
 
 import no.hvl.dat100.prosjekt.modell.KortSamling;
 import no.hvl.dat100.prosjekt.modell.KortUtils;
+import no.hvl.dat100.prosjekt.modell.Kortfarge;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+
 import no.hvl.dat100.prosjekt.TODO;
+import no.hvl.dat100.prosjekt.kontroll.dommer.Regler;
 import no.hvl.dat100.prosjekt.modell.Kort;
 
 /**
@@ -191,10 +197,13 @@ public class Bord {
 	 */
 	public void leggNedBunkeTil(Kort k) {
 		
-		// TODO - START
+		Bord bord = new Bord();
 		
-		throw new UnsupportedOperationException(TODO.method());
-		// TODO - END
+		Kort kort = new Kort(Kortfarge.Hjerter,1);
+		
+		int antalltil = bord.antallBunkeTil();
+		
+		bord.leggNedBunkeTil(kort);
 				
 	}
 }
