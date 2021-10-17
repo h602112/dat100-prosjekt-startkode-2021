@@ -4,9 +4,6 @@ import no.hvl.dat100.prosjekt.modell.KortSamling;
 import no.hvl.dat100.prosjekt.modell.KortUtils;
 import no.hvl.dat100.prosjekt.modell.Kortfarge;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-
 import no.hvl.dat100.prosjekt.TODO;
 import no.hvl.dat100.prosjekt.kontroll.dommer.Regler;
 import no.hvl.dat100.prosjekt.modell.Kort;
@@ -31,6 +28,8 @@ public class Bord {
 		// TODO - START
 		bunkeTil = new KortSamling();
 		bunkeFra = new KortSamling();
+		
+		bunkeFra.leggTilAlle();
 		// TODO - END
 	}
 	
