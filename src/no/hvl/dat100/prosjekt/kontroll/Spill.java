@@ -29,8 +29,10 @@ public class Spill {
 	public Spill() {
 		
 		// TODO - START
+		bord = new Bord();
+		nord = new NordSpiller(Spillere.NORD);
+		syd = new SydSpiller(Spillere.SYD);
 		
-		throw new UnsupportedOperationException(TODO.constructor("Spill"));
 		// TODO - END
 		
 	}
@@ -44,7 +46,7 @@ public class Spill {
 		
 		// TODO - START
 		
-		throw new UnsupportedOperationException(TODO.method());
+		return bord;
 
 		// TODO - END
 		
@@ -59,7 +61,7 @@ public class Spill {
 		
 		// TODO - START
 		
-		throw new UnsupportedOperationException(TODO.method());
+		return syd;
 
 		// TODO - END
 		
@@ -74,7 +76,7 @@ public class Spill {
 		
 		// TODO - START
 
-		throw new UnsupportedOperationException(TODO.method());
+		return nord;
 
 		// TODO - END
 	}
