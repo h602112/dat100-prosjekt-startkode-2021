@@ -23,7 +23,8 @@ public class Bord {
 	public Bord() {
 		
 		// TODO - START
-		
+		this.bunkeFra = new KortSamling();
+		this.bunkeTil = new KortSamling();
 		// TODO - END
 	}
 	
@@ -57,8 +58,7 @@ public class Bord {
 	public boolean bunketilTom() {
 		
 		// TODO - START
-		
-		throw new UnsupportedOperationException(TODO.method());
+		return bunkeTil.erTom();
 
 		// TODO - END
 	}
@@ -72,7 +72,7 @@ public class Bord {
 		
 		// TODO - START
 		
-		throw new UnsupportedOperationException(TODO.method());
+		return bunkeFra.erTom();
 	
 		// TODO - END
 		
@@ -87,7 +87,7 @@ public class Bord {
 		
 		// TODO - START
 		
-		throw new UnsupportedOperationException(TODO.method());
+		return bunkeFra.getAntalKort();
 
 		// TODO - END
 	}
@@ -101,7 +101,7 @@ public class Bord {
 		
 		// TODO - START
 		
-		throw new UnsupportedOperationException(TODO.method());
+		return bunkeTil.getAntalKort();
 
 		// TODO - END
 	}
