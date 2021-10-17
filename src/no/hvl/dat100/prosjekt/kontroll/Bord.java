@@ -166,8 +166,19 @@ public class Bord {
 	public void snuTilBunken() {
 
 		// TODO - START
-		
-		throw new UnsupportedOperationException(TODO.method());
+		Kort sisteKort = bunkeTil.taSiste();
+		Kort[] tempKortSamling = bunkeTil.getSamling();
+		tempKortSamling = bunkeTil.getAllekort();
+		bunkeTil.fjernAlle();
+		for (Kort kort : tempKortSamling) {
+			bunkeFra.leggTil(kort);
+		}
+		KortUtils.stokk(bunkeFra);
+		bunkeTil.leggTil(sisteKort);
+
+
+
+
 		// TODO - END
 	}
 		
