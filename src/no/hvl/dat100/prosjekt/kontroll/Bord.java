@@ -181,7 +181,7 @@ public class Bord {
 		KortUtils.stokk(bunkeFra);
 		bunkeTil.leggTil(sisteKort);
 
-
+		
 
 
 		// TODO - END
@@ -196,13 +196,6 @@ public class Bord {
 	 */
 	public void leggNedBunkeTil(Kort k) {
 		
-		Bord bord = new Bord();
-		
-		Kort kort = new Kort(Kortfarge.Hjerter,1);
-		
-		int antalltil = bord.antallBunkeTil();
-		
-		bord.leggNedBunkeTil(kort);
-				
+		bunkeTil.leggTil(k);		
 	}
 }
