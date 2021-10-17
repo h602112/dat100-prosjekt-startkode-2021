@@ -23,8 +23,8 @@ public class Bord {
 	public Bord() {
 		
 		// TODO - START
-		this.bunkeFra = new KortSamling();
-		this.bunkeTil = new KortSamling();
+		bunkeTil = new KortSamling();
+		bunkeFra = new KortSamling();
 		// TODO - END
 	}
 	
@@ -60,6 +60,7 @@ public class Bord {
 		// TODO - START
 		return bunkeTil.erTom();
 
+
 		// TODO - END
 	}
 
@@ -73,6 +74,7 @@ public class Bord {
 		// TODO - START
 		
 		return bunkeFra.erTom();
+
 	
 		// TODO - END
 		
@@ -87,7 +89,8 @@ public class Bord {
 		
 		// TODO - START
 		
-		return bunkeFra.getAntalKort();
+		int antall = bunkeFra.getAntalKort();
+		return antall;
 
 		// TODO - END
 	}
@@ -101,7 +104,8 @@ public class Bord {
 		
 		// TODO - START
 		
-		return bunkeTil.getAntalKort();
+		int antall = bunkeTil.getAntalKort();
+		return antall;
 
 		// TODO - END
 	}
@@ -113,8 +117,10 @@ public class Bord {
 	public void vendOversteFraBunke() {
 		
 		// TODO - START
+		Kort overste = bunkeFra.taSiste();
+		bunkeTil.leggTil(overste);
 		
-		throw new UnsupportedOperationException(TODO.method());
+
 		// TODO - END
 		
 	}
@@ -128,8 +134,8 @@ public class Bord {
 	public Kort taOversteFraBunke() {
 		
 		// TODO - START
-		
-		throw new UnsupportedOperationException(TODO.method());
+
+		return bunkeFra.taSiste();
 
 		// TODO - END
 	}
@@ -143,8 +149,10 @@ public class Bord {
 	public Kort seOversteBunkeTil() {
 		
 		// TODO - START
+
+		return bunkeTil.seSiste();
 		
-		throw new UnsupportedOperationException(TODO.method());
+
 
 		// TODO - END
 	}
