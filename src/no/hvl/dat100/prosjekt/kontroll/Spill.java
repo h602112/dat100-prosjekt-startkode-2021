@@ -93,8 +93,19 @@ public class Spill {
 	public void start() {
 		
 		// TODO - START
-		
-		throw new UnsupportedOperationException(TODO.method());
+		nord = new NordSpiller(Spillere.NORD);
+		syd = new SydSpiller(Spillere.SYD);
+		bord = new Bord();
+		KortUtils.stokk(bord.getBunkeFra());
+		for (int i = 0; i < 7; i++) {
+			trekkFraBunke(nord);
+			for (int j = 0; j <= i; j++) {
+				trekkFraBunke(syd);
+			}
+		}
+		Kort k = bord.taOversteFraBunke();
+		bord.getBunkeTil().leggTil(k);
+
 		// TODO - END
 	}
 
