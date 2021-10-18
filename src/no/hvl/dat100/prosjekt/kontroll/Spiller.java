@@ -50,7 +50,7 @@ public abstract class Spiller implements ISpiller {
 		
 		// TODO - START
 
-		throw new UnsupportedOperationException(TODO.constructor("Spiller"));
+		this.spiller = spiller;
 		// TODO - END
 	}
 
@@ -80,7 +80,7 @@ public abstract class Spiller implements ISpiller {
 		
 		// TODO - START
 		
-		throw new UnsupportedOperationException(TODO.method());
+		return spiller;
 
 		// TODO - END
 		
