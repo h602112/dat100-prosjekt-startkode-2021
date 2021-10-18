@@ -134,8 +134,16 @@ public class Spill {
 	public Kort trekkFraBunke(ISpiller spiller) {
 
 		// TODO - START
-			
-		throw new UnsupportedOperationException(TODO.method());
+		Kort kort = bord.getBunkeFra().taSiste();
+		if (bord.bunkefraTom()) {
+			bord.snuTilBunken();
+			spiller.trekker(kort);
+		} else {
+			spiller.trekker(kort);
+		}
+		return kort;
+
+
 
 		// TODO - END
 	}
