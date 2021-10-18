@@ -171,17 +171,17 @@ public class Bord {
 	public void snuTilBunken() {
 
 		// TODO - START
-//		Kort sisteKort = bunkeTil.taSiste();
-//		Kort[] tempKortSamling = bunkeTil.getSamling();
-//		tempKortSamling = bunkeTil.getAllekort();
-//		bunkeTil.fjernAlle();
-//		for (Kort kort : tempKortSamling) {
-//			bunkeFra.leggTil(kort);
-//		}
-//		KortUtils.stokk(bunkeFra);
-//		bunkeTil.leggTil(sisteKort);
-
 		Kort sisteKort = bunkeTil.taSiste();
+		Kort[] tempKortSamling = new Kort[bunkeTil.getSamling().length];
+		tempKortSamling = bunkeTil.getAllekort();
+		bunkeTil.fjernAlle();
+		for (Kort kort : tempKortSamling) {
+			bunkeFra.leggTil(kort);
+		}
+		KortUtils.stokk(bunkeFra);
+		bunkeTil.leggTil(sisteKort);
+
+
 		
 
 
