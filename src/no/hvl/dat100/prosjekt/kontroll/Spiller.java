@@ -97,8 +97,11 @@ public abstract class Spiller implements ISpiller {
 	public boolean erFerdig() {
 		
 		// TODO - START
-		
-		throw new UnsupportedOperationException(TODO.method());
+		if (getAntallTrekk() == 0) {
+			return true;
+		} else {
+			return false;
+		}
 		// TODO - END
 		
 	}
