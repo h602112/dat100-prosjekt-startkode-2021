@@ -111,6 +111,7 @@ public abstract class Spiller implements ISpiller {
 		// TODO - START
 		
 		hand.leggTil(kort);
+		antalltrekk++;
 		// TODO - END
 		
 	}
