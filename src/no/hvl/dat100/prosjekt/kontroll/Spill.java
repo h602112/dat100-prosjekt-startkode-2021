@@ -116,7 +116,10 @@ public class Spill {
 
 		// TODO - START
 		
-		throw new UnsupportedOperationException(TODO.method());
+		for (int i = 0; i < ANTALL_KORT_START; i++) {
+			trekkFraBunke(nord);
+			trekkFraBunke(syd);
+		}
 		// TODO - END
 	}
 
@@ -140,6 +143,7 @@ public class Spill {
 		} else {
 			spiller.trekker(kort);
 		}
+		System.out.println(spiller.getAntallTrekk());
 		return kort;
 
 
@@ -180,8 +184,15 @@ public class Spill {
 	public boolean leggnedKort(ISpiller spiller, Kort kort) {
 		
 		// TODO - START
-		
-		throw new UnsupportedOperationException(TODO.method());
+		if (spiller.getHand().har(kort)) {
+			bord.getBunkeTil().leggTil(kort);
+			spiller.getHand().fjern(kort);
+			spiller.setAntallTrekk(0);
+			return true;
+		} else {
+			return false;
+		}
+
 
 		// TODO - END
 	}
