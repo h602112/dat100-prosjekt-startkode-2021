@@ -2,6 +2,7 @@ package no.hvl.dat100.prosjekt.kontroll;
 
 import java.util.ArrayList;
 
+import no.hvl.dat100.prosjekt.kontroll.spill.HandlingsType;
 import no.hvl.dat100.prosjekt.modell.KortSamling;
 import no.hvl.dat100.prosjekt.TODO;
 import no.hvl.dat100.prosjekt.kontroll.dommer.Regler;
@@ -152,7 +153,8 @@ public class Spill {
 		
 		// TODO - START
 		// Hint: se på hvilke metoder som er tilgjengelig på en spiller
-		throw new UnsupportedOperationException(TODO.method());
+		return spiller.nesteHandling(bord.seOversteBunkeTil());
+
 
 		// TODO - END
 		
@@ -221,8 +223,15 @@ public class Spill {
 		// Hint: del opp i de tre mulige handlinger og vurder 
 		// om noen andre private metoder i klassen kan brukes
 		// til å implementere denne metoden
-				
-		throw new UnsupportedOperationException(TODO.method());
+		if (handling.getType() == HandlingsType.LEGGNED) {
+			spiller.fjernKort(handling.getKort());
+			bord.leggNedBunkeTil(handling.getKort());
+			return kort = handling.getKort();
+		} else if (handling.getType() == HandlingsType.TREKK) {
+			spiller.getHand().leggTil(bord.taOversteFraBunke());
+			return kort = bord.taOversteFraBunke();
+		} else return null;
+
 
 		// TODO - END
 	}
