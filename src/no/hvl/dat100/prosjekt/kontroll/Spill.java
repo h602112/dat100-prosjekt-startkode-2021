@@ -95,17 +95,16 @@ public class Spill {
 		// TODO - START
 		nord = new NordSpiller(Spillere.NORD);
 		syd = new SydSpiller(Spillere.SYD);
-		bord = new Bord();
 		KortUtils.stokk(bord.getBunkeFra());
-		for (int i = 0; i < 7; i++) {
+		int i = 0;
+		while (i < ANTALL_KORT_START) {
 			trekkFraBunke(nord);
-			for (int j = 0; j <= i; j++) {
-				trekkFraBunke(syd);
-			}
+			trekkFraBunke(syd);
+			i++;
 		}
 		Kort k = bord.taOversteFraBunke();
 		bord.getBunkeTil().leggTil(k);
-
+		System.out.println(bord.antallBunkeTil());
 		// TODO - END
 	}
 
