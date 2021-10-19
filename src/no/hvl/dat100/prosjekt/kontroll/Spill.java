@@ -93,18 +93,10 @@ public class Spill {
 	public void start() {
 		
 		// TODO - START
-		nord = new NordSpiller(Spillere.NORD);
-		syd = new SydSpiller(Spillere.SYD);
-		KortUtils.stokk(bord.getBunkeFra());
-		int i = 0;
-		while (i < ANTALL_KORT_START) {
-			trekkFraBunke(nord);
-			trekkFraBunke(syd);
-			i++;
-		}
-		Kort k = bord.taOversteFraBunke();
-		bord.getBunkeTil().leggTil(k);
-		System.out.println(bord.antallBunkeTil());
+		bord.getBunkeFra().leggTilAlle();
+		delutKort();
+		Kort kort = bord.getBunkeFra().taSiste();
+		bord.getBunkeTil().leggTil(kort);
 		// TODO - END
 	}
 
@@ -139,11 +131,8 @@ public class Spill {
 		Kort kort = bord.getBunkeFra().taSiste();
 		if (bord.bunkefraTom()) {
 			bord.snuTilBunken();
-			spiller.trekker(kort);
-		} else {
-			spiller.trekker(kort);
 		}
-		System.out.println(spiller.getAntallTrekk());
+		spiller.trekker(kort);
 		return kort;
 
 
@@ -153,7 +142,7 @@ public class Spill {
 
 	/**
 	 * Gir neste handling for en spiller (spilt et kort, trekker et kort, forbi)
-	 * 
+	 *
 	 * @param spiller
 	 *            spiller som skal handle.
 	 * 

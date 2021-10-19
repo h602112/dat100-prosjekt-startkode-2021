@@ -75,9 +75,15 @@ public class KortSamling {
 	 *            er kortet som skal leggast til.
 	 */
 	public void leggTil(Kort kort) {
-		
-		samling[antall] = kort;
-		antall++;
+		boolean lagtTil = false;
+		for (int i = 0; i < samling.length && !lagtTil; i++) {
+			if (samling[i] == null) {
+				samling[i] = kort;
+				antall++;
+
+				lagtTil = true;
+			}
+		}
 	}
 	
 	/**
