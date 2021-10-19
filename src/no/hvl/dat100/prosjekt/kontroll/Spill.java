@@ -226,11 +226,12 @@ public class Spill {
 		if (handling.getType() == HandlingsType.LEGGNED) {
 			spiller.fjernKort(handling.getKort());
 			bord.leggNedBunkeTil(handling.getKort());
-			return kort = handling.getKort();
 		} else if (handling.getType() == HandlingsType.TREKK) {
 			spiller.getHand().leggTil(bord.taOversteFraBunke());
-			return kort = bord.taOversteFraBunke();
-		} else return null;
+		} else if (handling.getType() == HandlingsType.FORBI) {
+			handling.skifteTur();
+		}
+		return handling.getKort();
 
 
 		// TODO - END
