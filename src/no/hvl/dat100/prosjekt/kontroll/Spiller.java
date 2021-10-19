@@ -49,7 +49,8 @@ public abstract class Spiller implements ISpiller {
 	public Spiller(Spillere spiller) {
 		
 		// TODO - START
-
+		this.hand = new KortSamling();
+		this.antalltrekk = 0;
 		this.spiller = spiller;
 		// TODO - END
 	}
