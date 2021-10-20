@@ -98,11 +98,7 @@ public abstract class Spiller implements ISpiller {
 	public boolean erFerdig() {
 		
 		// TODO - START
-		if (getAntallTrekk() == 0) {
-			return true;
-		} else {
-			return false;
-		}
+		return hand.erTom();
 		// TODO - END
 		
 	}
@@ -110,9 +106,8 @@ public abstract class Spiller implements ISpiller {
 	public void leggTilKort(Kort kort) {
 		
 		// TODO - START
-		
+
 		hand.leggTil(kort);
-		antalltrekk++;
 		// TODO - END
 		
 	}
@@ -139,6 +134,7 @@ public abstract class Spiller implements ISpiller {
 		// TODO - START
 		hand.leggTil(kort);
 		antalltrekk++;
+
 
 		// TODO - END
 		

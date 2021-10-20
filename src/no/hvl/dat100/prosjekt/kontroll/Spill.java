@@ -94,7 +94,6 @@ public class Spill {
 	public void start() {
 		
 		// TODO - START
-		bord.getBunkeFra().leggTilAlle();
 		delutKort();
 		Kort kort = bord.getBunkeFra().taSiste();
 		bord.getBunkeTil().leggTil(kort);
@@ -110,8 +109,8 @@ public class Spill {
 		// TODO - START
 		
 		for (int i = 0; i < ANTALL_KORT_START; i++) {
-			trekkFraBunke(nord);
-			trekkFraBunke(syd);
+			nord.leggTilKort(bord.taOversteFraBunke());
+			syd.leggTilKort(bord.taOversteFraBunke());
 		}
 		// TODO - END
 	}
@@ -224,14 +223,16 @@ public class Spill {
 		// om noen andre private metoder i klassen kan brukes
 		// til å implementere denne metoden
 		if (handling.getType() == HandlingsType.LEGGNED) {
+			kort = handling.getKort();
 			spiller.fjernKort(handling.getKort());
 			bord.leggNedBunkeTil(handling.getKort());
 		} else if (handling.getType() == HandlingsType.TREKK) {
-			spiller.getHand().leggTil(bord.taOversteFraBunke());
-		} else if (handling.getType() == HandlingsType.FORBI) {
-			handling.skifteTur();
+//			spiller.getHand().leggTil(bord.taOversteFraBunke());
+			kort = trekkFraBunke(spiller);
 		}
-		return handling.getKort();
+		return kort;
+
+
 
 
 		// TODO - END
